@@ -11,6 +11,10 @@ Advanced Arduino driver library for MFRC522 and other RFID RC522 based modules.
 
 Read and write different types of **R**adio-**F**requency **ID**entification (RFID) cards on your Arduino using a RC522 based reader connected via the Serial Peripheral Interface (SPI) or I2C interface.
 
+Added Ultralight-C converted to MFRC522v2. (from https://github.com/sschaeffner/rc522-ultralight-c)  
+Adapted to MFRC522v2 and added MFRC522Extended.cpp + MFRC522Extended.h (from https://github.com/miguelbalboa/rfid/)   
+spun out into a separate repo at https://github.com/mhaberler/Arduino_MFRC522v2Extended  
+
 ## Hints for this version
 
 * Fork of <https://github.com/miguelbalboa/rfid/>
