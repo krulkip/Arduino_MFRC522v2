@@ -177,11 +177,19 @@ public:
   StatusCode MIFARE_GetValue(byte blockAddr, int32_t *value);
   StatusCode MIFARE_SetValue(byte blockAddr, int32_t value);
   StatusCode PCD_NTAG216_AUTH(const byte password[4], byte pACK[]);
+
+  /////////////////////////////////////////////////////////////////////////////////////
+	// Functions for communicating with MIFARE Ultralight C specifically
+	/////////////////////////////////////////////////////////////////////////////////////
+	StatusCode MIFARE_UL_C_Auth(byte *key);
+	StatusCode MIFARE_UL_C_WriteKey(byte *key);
   
   /////////////////////////////////////////////////////////////////////////////////////
   // Support functions
   /////////////////////////////////////////////////////////////////////////////////////
   StatusCode PCD_MIFARE_Transceive(byte *sendData, byte sendLen, bool acceptTimeout = false);
+  //const char *GetStatusCodeName(byte code);
+	static const __FlashStringHelper *GetStatusCodeName(StatusCode code);
   static PICC_Type PICC_GetType(byte sak);
   
   // Advanced functions for MIFARE
@@ -198,6 +206,12 @@ protected:
   
   // Functions for communicating with MIFARE PICCs
   StatusCode MIFARE_TwoStepHelper(byte command, byte blockAddr, int32_t data);
+
+public:
+	void sample();
+	void debug(String str);
+	void dump_byte_array(byte *buffer, byte bufferSize);
+
 };
 
 #endif

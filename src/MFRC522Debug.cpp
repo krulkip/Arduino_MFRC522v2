@@ -132,7 +132,7 @@ void MFRC522Debug::PICC_DumpToSerial(MFRC522 &device, Print &logPrint,
   MIFARE_Key key;
   
   // Dump UID, SAK and Type
-  PICC_DumpDetailsToSerial(device, logPrint, uid);
+  //PICC_DumpDetailsToSerial(device, logPrint, uid);
   
   // Dump contents
   PICC_Type piccType = device.PICC_GetType(uid->sak);
@@ -185,7 +185,7 @@ void MFRC522Debug::PICC_DumpDetailsToSerial(MFRC522 &device, Print &logPrint,
     logPrint.print(uid->uidByte[i], HEX);
   }
   logPrint.println();
-  
+
   // SAK
   logPrint.print(F("Card SAK: "));
   if(uid->sak < 0x10)
@@ -193,9 +193,9 @@ void MFRC522Debug::PICC_DumpDetailsToSerial(MFRC522 &device, Print &logPrint,
   logPrint.println(uid->sak, HEX);
   
   // (suggested) PICC type
-  PICC_Type piccType = device.PICC_GetType(uid->sak);
-  logPrint.print(F("PICC type: "));
-  logPrint.println(PICC_GetTypeName(piccType));
+  //PICC_Type piccType = device.PICC_GetType(uid->sak);
+  //logPrint.print(F("PICC type: "));
+  //logPrint.println(PICC_GetTypeName(piccType));
 } // End PICC_DumpDetailsToSerial()
 
 /**
